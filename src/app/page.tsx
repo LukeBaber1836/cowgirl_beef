@@ -24,8 +24,83 @@ export default function Home() {
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 500]);
   const heroSecondaryY = useTransform(scrollYProgress, [0, 1], [0, 1000]);
 
+  // Structured Data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://cowgirlbeefetx.com/#business",
+        name: "Cowgirl Beef ETX",
+        description:
+          "Premium grass-fed beef raised by a cowgirl in Bullard, Texas. Pasture-raised, grain-finished cattle with no hormones or antibiotics.",
+        url: "https://cowgirlbeefetx.com",
+        telephone: "(903) 363-8303",
+        email: "rachel@cowgirlbeefetx.com",
+        foundingDate: "2020",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Bullard",
+          addressRegion: "TX",
+          addressCountry: "US",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "32.1451",
+          longitude: "-95.3244",
+        },
+        sameAs: [
+          "https://www.instagram.com/cowgirlbeefetx",
+          "https://www.facebook.com/cowgirlbeefetx",
+        ],
+        priceRange: "$$",
+        paymentAccepted: "Cash, Check",
+        currenciesAccepted: "USD",
+      },
+      {
+        "@type": "Product",
+        "@id": "https://cowgirlbeefetx.com/#beef-products",
+        name: "Premium Grass-Fed Beef",
+        description:
+          "Pasture-raised, grain-finished beef with no hormones or antibiotics. Available in quarter cow, half cow, and whole cow packages.",
+        brand: {
+          "@type": "Brand",
+          name: "Cowgirl Beef ETX",
+        },
+        offers: [
+          {
+            "@type": "Offer",
+            name: "Quarter Cow Package",
+            price: "900",
+            priceCurrency: "USD",
+            availability: "https://schema.org/OutOfStock",
+          },
+          {
+            "@type": "Offer",
+            name: "Half Cow Package",
+            price: "1700",
+            priceCurrency: "USD",
+            availability: "https://schema.org/OutOfStock",
+          },
+          {
+            "@type": "Offer",
+            name: "Whole Cow Package",
+            price: "3200",
+            priceCurrency: "USD",
+            availability: "https://schema.org/OutOfStock",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
       <section className="relative h-fit w-full overflow-hidden flex flex-col justify-center items-center">
         <div className="relative h-full w-full flex flex-col justify-center items-center overflow-hidden">
