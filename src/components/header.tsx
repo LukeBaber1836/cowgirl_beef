@@ -22,9 +22,9 @@ import Logo from "./ui/svg_components/logo";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
-  { name: "Beef", href: "/#products" },
-  { name: "Contact", href: "/#contact" },
+  { name: "About", href: "#about" },
+  { name: "Beef", href: "#products" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Header() {
@@ -45,20 +45,21 @@ export default function Header() {
                 <DrawerHeader>
                   <DrawerTitle className="flex justify-center">
                     <Link href={"/"}>
-                      <Logo fill="hsl(7, 68%, 26%, 100%)" className="size-18" />
+                      <Logo fill="hsl(7, 68%, 26%, 100%)" className="size-28" />
                     </Link>
                   </DrawerTitle>
                 </DrawerHeader>
                 <div className="p-4">
                   <nav className="space-y-4">
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="block text-lg hover:text-primary transition-colors"
-                      >
-                        {item.name}
-                      </a>
+                      <DrawerClose key={item.name} asChild>
+                        <Link
+                          href={item.href}
+                          className="block text-lg hover:text-primary transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      </DrawerClose>
                     ))}
                   </nav>
                 </div>

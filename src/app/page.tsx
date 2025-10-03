@@ -22,6 +22,7 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
 
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 500]);
+  const heroSecondaryY = useTransform(scrollYProgress, [0, 1], [0, 1000]);
 
   return (
     <>
@@ -45,6 +46,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
+              style={{ y: heroSecondaryY }}
               transition={{
                 duration: 1.5,
                 ease: "easeInOut",
@@ -57,22 +59,41 @@ export default function Home() {
               </h2>
             </motion.div>
             <div className="col-span-1 flex flex-col justify-center items-center font-serif font-light text-shadow-black text-shadow-lg">
-              <motion.h1
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+              <motion.div
+                initial={{ y: -30 }}
+                whileInView={{ y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                style={{ y: heroY }}
                 transition={{
                   duration: 1.25,
                   ease: "easeInOut",
-                  delay: 0.1,
+                  delay: 0,
                 }}
-                className="text-[50px] min-w-[500px] pb-10 md:pb-0 lg:text-[100px] text-center font-light text-background"
               >
-                Cowgirl Beef
-              </motion.h1>
+                <motion.h1
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  style={{ y: heroY }}
+                  transition={{
+                    duration: 1.25,
+                    ease: "easeInOut",
+                    delay: 0.1,
+                  }}
+                  className="text-[50px] min-w-[500px] pb-10 md:pb-0 lg:text-[100px] text-center font-light text-background"
+                >
+                  Cowgirl Beef
+                </motion.h1>
+              </motion.div>
               <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
                 style={{ y: heroY }}
+                transition={{
+                  duration: 1,
+                  ease: "easeInOut",
+                  delay: 0.25,
+                }}
                 className="flex items-center justify-center space-x-3"
               >
                 <motion.div
@@ -118,6 +139,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
+              style={{ y: heroSecondaryY }}
               transition={{
                 duration: 1.5,
                 ease: "easeInOut",
@@ -144,7 +166,7 @@ export default function Home() {
           <div className="flex flex-col justify-start">
             {/* Welcome Ribbon */}
             <motion.div
-              initial={{ opacity: 0, x: -350, scale: 0.8 }}
+              initial={{ opacity: 0, x: -300, scale: 0.8 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{
