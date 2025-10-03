@@ -4,10 +4,10 @@ import Link from "next/link";
 import Logo from "./ui/svg_components/logo";
 
 const navigation = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Cuts", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/#about" },
+  { name: "Beef", href: "/#products" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 const socialLinks = [

@@ -23,8 +23,9 @@ import Logo from "./ui/svg_components/logo";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", href: "/#about" },
+  { name: "Beef", href: "/#products" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -117,7 +118,9 @@ export default function Header() {
             <BsDash className="text-primary size-5" />
           </div>
 
-          <Button className="px-8">Contact</Button>
+          <Link href="#contact">
+            <Button className="px-8">Contact</Button>
+          </Link>
         </section>
       </nav>
     </header>

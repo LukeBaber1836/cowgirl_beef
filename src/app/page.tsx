@@ -129,12 +129,12 @@ export default function Home() {
       </section>
 
       {/* Our Cows Section */}
-      <section className="relative w-full pb-20 bg-background">
+      <section id="about" className="relative w-full pb-20 bg-background">
         <div className="curved-top w-full items-center pb-20">
           <div className="flex flex-col justify-start">
             {/* Welcome Ribbon */}
             <motion.div
-              initial={{ opacity: 0, x: -500, scale: 0.8 }}
+              initial={{ opacity: 0, x: -350, scale: 0.8 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{
@@ -176,7 +176,7 @@ export default function Home() {
                       ease: "easeInOut",
                       delay: 0.3,
                     }}
-                    className="text-6xl text-primary py-5 font-serif"
+                    className="text-5xl md:text-6xl text-primary py-5 font-serif"
                   >
                     Meet Our Cows
                   </motion.h1>
@@ -220,7 +220,7 @@ export default function Home() {
       </section>
 
       {/* Products Section */}
-      <section className="relative w-full">
+      <section id="products" className="relative w-full">
         <div className="w-full bg-primary pb-16 md:pb-32">
           <div className="container mx-auto relative">
             <div className="flex flex-row">
@@ -244,7 +244,7 @@ export default function Home() {
                     duration: 0.75,
                     ease: "easeInOut",
                   }}
-                  className="text-6xl w-fit text-background font-serif text-center"
+                  className="text-5xl md:text-6xl w-fit text-background font-serif text-center"
                 >
                   Our Beef Cuts
                 </motion.h1>
@@ -276,7 +276,10 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative w-full bg-background pb-0 sm:pb-30">
+      <section
+        id="contact"
+        className="relative w-full bg-background pb-0 sm:pb-30"
+      >
         <div className="container mx-auto px-5">
           <div className="flex flex-row w-full justify-center items-center space-x-5">
             <motion.div
@@ -299,7 +302,7 @@ export default function Home() {
                 ease: "easeInOut",
                 delay: 0.3,
               }}
-              className="text-6xl text-primary py-5 font-serif"
+              className="text-5xl md:text-6xl text-primary py-5 font-serif"
             >
               Contact the Cowgirl
             </motion.h1>
