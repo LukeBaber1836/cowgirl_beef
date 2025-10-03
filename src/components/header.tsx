@@ -45,13 +45,9 @@ export default function Header() {
               <div className="mx-auto w-full max-w-sm">
                 <DrawerHeader>
                   <DrawerTitle className="flex justify-center">
-                    <Image
-                      src="/images/logo.png"
-                      alt="Cowgirl Beef Logo"
-                      width={150}
-                      height={75}
-                      className="size-18 object-contain"
-                    />
+                    <Link href={"/"}>
+                      <Logo fill="hsl(7, 68%, 26%, 100%)" className="size-18" />
+                    </Link>
                   </DrawerTitle>
                 </DrawerHeader>
                 <div className="p-4">

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { BsDash } from "react-icons/bs";
 import { CowImageCluster } from "@/components/cow-image-cluster";
 import CowQuotingWidget from "@/components/cow-quoting-widget";
@@ -18,6 +18,11 @@ import CurveSeparator4 from "@/components/ui/svg_components/curve-separator-4";
 import { BsInstagram, BsFacebook } from "react-icons/bs";
 
 export default function Home() {
+  // Used for trackign the movement of the hero text
+  const { scrollYProgress } = useScroll();
+
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, 500]);
+
   return (
     <>
       {/* Hero Section */}
@@ -28,6 +33,7 @@ export default function Home() {
             muted
             loop
             playsInline
+            poster="/images/hero_poster.png"
             className="w-full min-h-[700px] sm:h-screen object-cover -z-10"
           >
             <source src="videos/hero_video.mp4" type="video/mp4" />
@@ -55,6 +61,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
+                style={{ y: heroY }}
                 transition={{
                   duration: 1.25,
                   ease: "easeInOut",
@@ -64,7 +71,10 @@ export default function Home() {
               >
                 Cowgirl Beef
               </motion.h1>
-              <div className="flex items-center justify-center space-x-3">
+              <motion.div
+                style={{ y: heroY }}
+                className="flex items-center justify-center space-x-3"
+              >
                 <motion.div
                   initial={{ opacity: 0, x: 20, scale: 0.5 }}
                   whileInView={{ opacity: 1, x: 0, scale: 1 }}
@@ -102,7 +112,7 @@ export default function Home() {
                 >
                   <BsDash className="inline size-8 text-background" />
                 </motion.div>
-              </div>
+              </motion.div>
             </div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
