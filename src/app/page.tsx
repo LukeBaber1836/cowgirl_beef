@@ -15,7 +15,7 @@ import CurveSeparator3 from "@/components/ui/svg_components/curve-separator-3";
 import CurveSeparator4 from "@/components/ui/svg_components/curve-separator-4";
 
 // Social icons
-import { BsInstagram, BsFacebook } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
 
 export default function Home() {
   // Used for trackign the movement of the hero text
@@ -50,7 +50,7 @@ export default function Home() {
           longitude: "-95.3244",
         },
         sameAs: [
-          "https://www.instagram.com/cowgirlbeefetx",
+          "https://www.instagram.com/cowgirlbeef/?igsh=MXNoNHk3cDFzY2JzYw%3D%3D&utm_source=qr#",
           "https://www.facebook.com/cowgirlbeefetx",
         ],
         priceRange: "$$",
@@ -454,21 +454,21 @@ export default function Home() {
               </div>
               <div className="flex justify-center space-x-6 pt-5">
                 <Link
-                  href="https://www.instagram.com/cowgirlbeefetx"
+                  href="https://www.instagram.com/cowgirlbeef/?igsh=MXNoNHk3cDFzY2JzYw%3D%3D&utm_source=qr#"
                   className="text-primary hover:text-secondary transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <BsInstagram className="size-10 hover:scale-105 duration-300 ease-in-out" />
                 </Link>
-                <Link
+                {/* <Link
                   href="https://www.facebook.com/cowgirlbeefetx"
                   className="text-primary hover:text-secondary transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <BsFacebook className="size-10 hover:scale-105 duration-300 ease-in-out" />
-                </Link>
+                </Link> */}
               </div>
             </motion.div>
             <motion.div

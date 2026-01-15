@@ -11,8 +11,11 @@ const navigation = [
 ];
 
 const socialLinks = [
-  { name: "Facebook", href: "#" },
-  { name: "Instagram", href: "#" },
+  // { name: "Facebook", href: "#" },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/cowgirlbeef/?igsh=MXNoNHk3cDFzY2JzYw%3D%3D&utm_source=qr#",
+  },
 ];
 
 const legalLinks = [
@@ -65,6 +68,8 @@ export default function Footer() {
                   <Link
                     key={item.name}
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-lg text-background hover:text-background/80 transition-colors"
                   >
                     {item.name}
