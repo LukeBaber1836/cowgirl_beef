@@ -299,16 +299,16 @@ export default function Home() {
                     className="text-2xl border-y-1 border-primary py-5 space-y-6"
                   >
                     <p>
-                      Our cows spend their lives grazing freely on open Texas
-                      pastures, where they enjoy plenty of fresh air and space
-                      to roam.
+                      Our cows spend their lives grazing freely on East
+                      Texas pastures, where they enjoy plenty of grass and open
+                      space to roam.
                     </p>
                     <p>
                       They are pasture raised and grain finished to ensure the
                       perfect balance of flavor and tenderness in every cut.
                     </p>
                     <p>
-                      We never use hormones or antibiotics—just honest, healthy
+                      We never use hormones or antibiotics. Just honest, healthy
                       ranching the way it&apos;s meant to be. Raised with care
                       by a cowgirl, our cattle produce beef you can feel good
                       about feeding your family.
